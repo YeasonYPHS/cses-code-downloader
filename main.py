@@ -4,10 +4,11 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By 
 import os
 import time 
+import getpass
 
 
 USERNAME = str(input("Input user name:"))
-PASSWORD = str(input("Input password:"))
+PASSWORD = str(getpass.getpass("Input password:"))
 
 driver = webdriver.Chrome()
 driver.get('https://cses.fi/login')
