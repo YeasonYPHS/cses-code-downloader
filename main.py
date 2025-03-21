@@ -7,7 +7,7 @@ import time
 
 
 USERNAME = str(input("Input user name:"))
-PASSWORD = str(input("Input password"))
+PASSWORD = str(input("Input password:"))
 
 driver = webdriver.Chrome()
 driver.get('https://cses.fi/login')
@@ -21,6 +21,13 @@ login_button = driver.find_element(By.XPATH, "//input[@value=\"Submit\"]")
 username.send_keys(USERNAME)
 password.send_keys(PASSWORD)
 login_button.click()
+
+time.sleep(2)
+
+if(driver.execute_script("return window.location.href") == "https://cses.fi/login"):
+    print("Incorrect username or password")
+    driver.quit()
+    exit()
 
 driver.get('https://cses.fi/problemset/')
 
