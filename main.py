@@ -6,6 +6,9 @@ import os
 import time 
 
 
+USERNAME = str(input("Input user name:"))
+PASSWORD = str(input("Input password"))
+
 driver = webdriver.Chrome()
 driver.get('https://cses.fi/login')
 
@@ -15,8 +18,8 @@ username = driver.find_element(By.ID, "nick")
 password = driver.find_element(By.NAME, "pass")
 login_button = driver.find_element(By.XPATH, "//input[@value=\"Submit\"]")
 
-username.send_keys("Yeason")
-password.send_keys("1qaz!QAZ")
+username.send_keys(USERNAME)
+password.send_keys(PASSWORD)
 login_button.click()
 
 driver.get('https://cses.fi/problemset/')
