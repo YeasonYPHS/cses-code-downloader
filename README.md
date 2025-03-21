@@ -12,3 +12,4 @@ A one-line code to run :
 ```
 curl -LJO https://raw.githubusercontent.com/YeasonYPHS/cses-code-downloader/refs/heads/main/main.py && pip install selenium && python3 ./main.py
 ```
+TBD: sort code files into different directories
